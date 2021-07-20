@@ -22,7 +22,7 @@
  *   'I live in England!' => 'England'
  */
 function extractCountryFromTemplate(value) {
-    throw new Error('Not implemented');
+    return value.substring(10, (value.length - 1));
 }
 
 /**
@@ -37,7 +37,7 @@ function extractCountryFromTemplate(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-    throw new Error('Not implemented');
+    return value.trim();
 }
 
 /**
@@ -52,7 +52,11 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    throw new Error('Not implemented');
+    let str = '';
+    for (let i = 0; i < count; i++) {
+        str += value;
+    }
+    return str;
 }
 
 /**
@@ -68,7 +72,7 @@ function repeatString(value, count) {
  *   'Penny', 'ny' => 'Pen'
  */
 function removeFirstOccurrences(str, value) {
-    throw new Error('Not implemented');
+    return str.replace(value, '');
 }
 
 /**
@@ -83,7 +87,9 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    throw new Error('Not implemented');
+    let a = str.replace('<', '');
+    let b = a.replace('>', '');
+    return b;
 }
 
 module.exports = {

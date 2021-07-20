@@ -22,8 +22,13 @@
  *   5  => 120
  *   10 => 3628800
  */
- function getFactorial(n) {
-    throw new Error('Not implemented');
+function getFactorial(n) {
+    let result = 1;
+
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
 }
 
 
@@ -40,7 +45,13 @@
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    let i = 1;
+    let sum = 0;
+    while (n1 <= n2) {
+        sum += n1;
+        n1 += i;
+    }
+    return sum;
 }
 
 
@@ -56,7 +67,10 @@ function getSumBetweenNumbers(n1, n2) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-    throw new Error('Not implemented');
+    let s = str.split('');
+    let S = '';
+    S = s.find((n, i, a) => a.indexOf(n) === a.lastIndexOf(n));
+    return S;
 }
 
 /**
@@ -72,7 +86,14 @@ function findFirstSingleChar(str) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    let reverseStr = '';
+    let index = str.length - 1;
+
+    while (index >= 0) {
+        reverseStr += str[index];
+        index--;
+    }
+    return reverseStr;
 }
 
 
@@ -89,7 +110,14 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    let re = /\s*\s*/;
+    let digits = num.toString().split(re);
+    let n = digits.length;
+    for (let i = digits.length - 1; i >= 0; i--) {
+        digits.push(digits[i]);
+    }
+    digits.splice(0, n);
+    return digits.join('');
 }
 
 module.exports = {

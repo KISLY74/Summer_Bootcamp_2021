@@ -4,7 +4,7 @@ var assert = require('assert');
 var lint = require('mocha-eslint');
 var tasks = require('../task/regex-task');
 
-describe('regex-task', function() {
+describe('regex-task', function () {
 
     it('getRegexForGuid should match the valid GUID', function () {
         var result = tasks.getRegexForGuid();
@@ -28,10 +28,10 @@ describe('regex-task', function() {
             '0c74f13f-fa83-4c48-9b33-68921dd72463',
             'The roof, the roof, the roof is on fire'
         ].forEach((str) => {
-             assert(
-                 result.test(str) == false,
+            assert(
+                result.test(str) == false,
                 `regex matches '${str}'`
-             );
+            );
         });
 
     });
@@ -40,14 +40,14 @@ describe('regex-task', function() {
     it('getRegexForPitSpot should be implemeted according to task', function () {
         var result = tasks.getRegexForPitSpot();
 
-        [ 'pit', 'spot', 'spate', 'slap two', 'respite' ].forEach((str) => {
+        ['pit', 'spot', 'spate', 'slap two', 'respite'].forEach((str) => {
             assert(
                 result.test(str),
                 `regex does not match '${str}'`
             );
         });
 
-        [ ' pt', 'Pot', 'peat', 'part' ].forEach((str) => {
+        [' pt', 'Pot', 'peat', 'part'].forEach((str) => {
             assert(
                 result.test(str) == false,
                 `regex matches '${str}'`

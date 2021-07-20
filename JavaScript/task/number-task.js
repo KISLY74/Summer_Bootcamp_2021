@@ -25,8 +25,8 @@
  *  10, 0  => 5
  *  -3, 3  => 0
  */
- function getAverage(value1, value2) {
-    throw new Error('Not implemented');
+function getAverage(value1, value2) {
+    return ((value1 / 2) + (value2 / 2));
 }
 
 /**
@@ -42,7 +42,11 @@
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-    throw new Error('Not implemented');
+    let n = (((-1) * b) / a);
+    if (b === 0) {
+        n = b / a;
+    }
+    return n;
 }
 
 /**
@@ -58,7 +62,8 @@ function getLinearEquationRoot(a, b) {
  *     0     => 0
  */
 function getLastDigit(value) {
-    throw new Error('Not implemented');
+    let arr = value.toString().split('');
+    return Number(arr[arr.length - 1]);
 }
 
 /**
@@ -74,8 +79,8 @@ function getLastDigit(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelipidedDiagonal(a,b,c) {
-    throw new Error('Not implemented');
+function getParallelipidedDiagonal(a, b, c) {
+    return Math.hypot(a, b, c);
 }
 
 /**
@@ -96,7 +101,7 @@ function getParallelipidedDiagonal(a,b,c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    throw new Error('Not implemented');
+    return Math.round(num / Math.pow(10, pow), pow) * Math.pow(10, pow);
 }
 
 /**
@@ -117,7 +122,17 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
+    let del = 0;
+
+    for (let i = 1; i <= n; i++) {
+        if (n % i === 0) {
+            del++
+        }
+    }
+    if (del > 2) {
+        return false
+    }
+    return true;
 }
 
 module.exports = {
