@@ -57,7 +57,7 @@ function getRegexForGuid() {
  *
  */
 function getRegexForPitSpot() {
-   return /[p.t]/;
+   return /p.t/;
 }
 
 module.exports = {
